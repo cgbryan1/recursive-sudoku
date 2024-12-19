@@ -36,6 +36,31 @@ public class RecursiveSudoku {
         return true;
     }
 
+    // for this to work, board must have zero for empty cell!
+    public static boolean solve(int[][] board, int size){
+         // size = grid size, ex 9x9
+         // holds location of first empty cell
+         int eRow = -1;
+         int eCol = -1;
+         boolean isEmpty = true;
+
+         for (int r = 0; r < board.length; r++){
+             for (int c = 0; c < board[r].length; c++){
+                 if (board[r][c] == 0){
+                     eRow = r;
+                     eCol = c;
+                     isEmpty = false;
+                     break;
+                 }
+             }
+         }
+         if (isEmpty){
+             return true;
+         }
+
+
+    }
+
 
 
 }
